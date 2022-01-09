@@ -30,6 +30,11 @@ public class CartsController {
         cartService.reduceProductByIdToCart(id);
     }
 
+    @GetMapping("/clear/{id}")
+    public void clearProductToCart(@PathVariable Long id) {
+        cartService.clearProductByIdToCart(id);
+    }
+
     @GetMapping("/clear")
     public void clearCart() {
         cartService.getCurrentCart().clear();

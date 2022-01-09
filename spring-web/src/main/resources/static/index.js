@@ -26,6 +26,15 @@ angular.module('app', ['ngStorage']).controller('indexController', function ($sc
             });
     }
 
+    $scope.reduceToCart = function (id) {
+        $http({
+            url: contextPath + '/carts/reduce/' + id,
+            method: 'GET'
+        }).then(function (response) {
+            $scope.loadCart();
+        });
+    };
+
     $scope.clearCart = function () {
         $http.get(contextPath + '/carts/clear')
             .then(function (response) {
@@ -108,6 +117,16 @@ angular.module('app', ['ngStorage']).controller('indexController', function ($sc
                 alert('UNAUTHORIZED');
             });
     }
+
+    $scope.clearProductToCart = function (id, name) {
+        $http({
+            url: contextPath + '/carts/clear/' + id,
+            method: 'GET'
+        }).then(function (response) {
+            alert('Product ' + name + ' clear');
+            $scope.loadCart();
+        });
+    };
 
     if ($localStorage.logUser) {
         $http.defaults.headers.common.Authorization = 'Bearer ' + $localStorage.springWebUser.token;

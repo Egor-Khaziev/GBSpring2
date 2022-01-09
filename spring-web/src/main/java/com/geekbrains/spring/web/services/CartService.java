@@ -37,10 +37,10 @@ public class CartService {
     }
 
     public void reduceProductByIdToCart(Long productId) {
-        if (!getCurrentCart().reduceProduct(productId)) {
-            Product product = productService.findById(productId).orElseThrow(() -> new ResourceNotFoundException("Невозможно добавить продукт в корзину. Продукт не найдет, id: " + productId));
-            getCurrentCart().addProduct(product);
-        }
+        getCurrentCart().reduceProduct(productId);
+    }
 
+    public void clearProductByIdToCart(Long id) {
+        getCurrentCart().clearProduct(id);
     }
 }

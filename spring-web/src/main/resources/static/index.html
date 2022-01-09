@@ -92,8 +92,15 @@
         <tbody>
         <tr ng-repeat="item in Cart.items">
             <td>{{item.productTitle}}</td>
-            <td>{{item.quantity}}</td>
+            <td>
+                <button class="btn btn-danger" ng-click="reduceToCart(item.productId)">-</button>
+                {{item.quantity}}
+                <button class="btn btn-primary" ng-click="addToCart(item.productId)">+</button>
+            </td>
             <td>{{item.pricePerProduct + ' x ' + item.quantity + ' = ' + item.price}}</td>
+            <td>
+                <button class="btn btn-danger" ng-click="clearProductToCart(item.productId, item.productTitle)">Убрать позицию</button>
+            </td>
         </tr>
         <tr>
             <td></td>
@@ -103,11 +110,12 @@
         </tbody>
     </table>
     <p>
-        <button class="btn btn-secondary" ng-click="clearCart()">Очистить корзину</button>
-        <button class="btn btn-primary" ng-click="createOrder()">Оформить заказ</button>
+        <button class="btn btn-danger" ng-click="clearCart()">Очистить корзину</button>
+        <button ng-show="isUserLoggedIn()" class="btn btn-primary" ng-click="createOrder()">Оформить заказ</button>
+        <button ng-show="!isUserLoggedIn()" class="btn btn-secondary">Пожалуйста войдите в ситему</button>
     </p>
     <p>
-        <button class="btn btn-danger" ng-click="showCurrentUserInfo()">Обо мне</button>
+        <button class="btn btn-info" ng-click="showCurrentUserInfo()">Обо мне</button>
     </p>
 
     <div ng-show="isUserLoggedIn()">

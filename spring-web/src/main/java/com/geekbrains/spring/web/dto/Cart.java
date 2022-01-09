@@ -68,6 +68,16 @@ public class Cart {
         }
     }
 
+    public void clearProduct(Long id) {
+        for (OrderItemDto oid: items){
+            if (oid.getProductId()==(id)){
+                items.remove(oid);
+                recalculate();
+                return;
+            }
+        }
+    }
+
     public boolean reduceProduct(Long id) {
         for (OrderItemDto oid: items) {
             if(oid.getProductId()==(id)){
