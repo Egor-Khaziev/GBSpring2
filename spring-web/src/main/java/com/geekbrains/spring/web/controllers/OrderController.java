@@ -23,7 +23,7 @@ public class OrderController {
     @PostMapping
     public void createOrder(Principal principal, @RequestBody OrderDetailsDto orderDetailsDto) {
         User user = userService.findByUsername(principal.getName()).get();
-        System.out.println("+++++++++++++++++++++++ " + user.getUsername() + " create order +++++++++++++++++++++++");
+        System.out.println("+++++++++++++++++++++++ " + user.getUsername() + " created order +++++++++++++++++++++++");
         orderService.save(user, orderDetailsDto);
 
         System.out.println();
