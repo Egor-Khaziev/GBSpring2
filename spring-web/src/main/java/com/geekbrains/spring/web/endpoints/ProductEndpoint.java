@@ -19,6 +19,9 @@ public class ProductEndpoint {
     private final ProductService productService;
 
     /*
+            Header -> Content-Type: text/xml
+
+            git
         <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
           xmlns:f="http://www.geekbrains.com/spring/web/soap/products/productXML">
             <soapenv:Header/>
@@ -40,6 +43,9 @@ public class ProductEndpoint {
     }
 
         /*
+                Header -> Content-Type: text/xml
+
+
         <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
           xmlns:f="http://www.geekbrains.com/spring/web/soap/products/productXML">
             <soapenv:Header/>
