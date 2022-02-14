@@ -1,0 +1,202 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 132120576 bytes for Failed to commit area from 0x0000000083800000 to 0x000000008b600000 of length 132120576.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./src/hotspot/os/windows/os_windows.cpp:3311), pid=164, tid=15736
+#
+# JRE version:  (11.0.12+7) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.12+7-LTS, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -javaagent:D:\JetBrains\IntelliJ IDEA 2021.3.1\lib\idea_rt.jar=50402:D:\JetBrains\IntelliJ IDEA 2021.3.1\bin -Dfile.encoding=UTF-8 com.khaziev.rabbitmq.recipient.InfinityRecipientAPP
+
+Host: Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz, 8 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1466)
+Time: Sun Feb 13 03:00:14 2022 Omsk Standard Time elapsed time: 0.083525 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001829ad14800):  JavaThread "Unknown thread" [_thread_in_vm, id=15736, stack(0x0000004859700000,0x0000004859800000)]
+
+Stack: [0x0000004859700000,0x0000004859800000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x601cea]
+V  [jvm.dll+0x78ab4e]
+V  [jvm.dll+0x78c21f]
+V  [jvm.dll+0x78c8e3]
+V  [jvm.dll+0x24be68]
+V  [jvm.dll+0x5fee8a]
+V  [jvm.dll+0x5f3945]
+V  [jvm.dll+0x303aec]
+V  [jvm.dll+0x303972]
+V  [jvm.dll+0x308696]
+V  [jvm.dll+0x34d55f]
+V  [jvm.dll+0x34cf90]
+V  [jvm.dll+0x2e0bf8]
+V  [jvm.dll+0x2e1d56]
+V  [jvm.dll+0x765ed7]
+V  [jvm.dll+0x76765f]
+V  [jvm.dll+0x35a2e9]
+V  [jvm.dll+0x748f60]
+V  [jvm.dll+0x3c1f1f]
+V  [jvm.dll+0x3c43f1]
+C  [jli.dll+0x5207]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x52651]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00000182988f5b30, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001829ad2e000 GCTaskThread "GC Thread#0" [stack: 0x0000004859800000,0x0000004859900000] [id=22768]
+  0x000001829ad5d800 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000004859900000,0x0000004859a00000] [id=14768]
+  0x000001829ad5e800 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000004859a00000,0x0000004859b00000] [id=11796]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffff2cc02c7]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001829ad102c0] Heap_lock - owner thread: 0x000001829ad14800
+
+Heap address: 0x0000000083800000, size: 1992 MB, Compressed Oops mode: Non-zero based: 0x0000000083800000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.060 Loaded shared library C:\Program Files\BellSoft\LibericaJDK-11\bin\zip.dll
+
+
+Dynamic libraries:
+0x00007ff6a8de0000 - 0x00007ff6a8ded000 	C:\Program Files\BellSoft\LibericaJDK-11\bin\java.exe
+0x00007ff848ad0000 - 0x00007ff848cc5000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff848060000 - 0x00007ff84811e000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff846730000 - 0x00007ff8469f8000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff83fbd0000 - 0x00007ff83fbe7000 	C:\Program Files\BellSoft\LibericaJDK-11\bin\jli.dll
+0x00007ff846d80000 - 0x00007ff846f21000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff846240000 - 0x00007ff846262000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff846270000 - 0x00007ff846370000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff847620000 - 0x00007ff84764b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff846a00000 - 0x00007ff846b0d000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff8222c0000 - 0x00007ff82255a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ff846690000 - 0x00007ff84672d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff848920000 - 0x00007ff8489be000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff83fa00000 - 0x00007ff83fa15000 	C:\Program Files\BellSoft\LibericaJDK-11\bin\VCRUNTIME140.dll
+0x00007ff847100000 - 0x00007ff847130000 	C:\WINDOWS\System32\IMM32.DLL
+0x0000018298ba0000 - 0x0000018298bb3000 	C:\WINDOWS\System32\umppc14705.dll
+0x0000000068000000 - 0x0000000068071000 	C:\WINDOWS\System32\QIPCAP64.dll
+0x00007ff846f30000 - 0x00007ff846fde000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff8471b0000 - 0x00007ff84724c000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff8482b0000 - 0x00007ff8483d5000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff847800000 - 0x00007ff847f44000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ff845610000 - 0x00007ff8456db000 	C:\WINDOWS\SYSTEM32\DNSAPI.dll
+0x00007ff8455d0000 - 0x00007ff84560b000 	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+0x00007ff847130000 - 0x00007ff847138000 	C:\WINDOWS\System32\NSI.dll
+0x00007ff805850000 - 0x00007ff8058eb000 	C:\Program Files\BellSoft\LibericaJDK-11\bin\msvcp140.dll
+0x00007ffff29d0000 - 0x00007ffff352a000 	C:\Program Files\BellSoft\LibericaJDK-11\bin\server\jvm.dll
+0x00007ff848910000 - 0x00007ff848918000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff8318a0000 - 0x00007ff8318a9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff847250000 - 0x00007ff8472bb000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff8433d0000 - 0x00007ff8433f7000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff842fc0000 - 0x00007ff842fca000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff843f40000 - 0x00007ff843f52000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff83de30000 - 0x00007ff83de40000 	C:\Program Files\BellSoft\LibericaJDK-11\bin\verify.dll
+0x00007ff8437e0000 - 0x00007ff8439c4000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff8433a0000 - 0x00007ff8433cc000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff8465b0000 - 0x00007ff846632000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff831650000 - 0x00007ff831678000 	C:\Program Files\BellSoft\LibericaJDK-11\bin\java.dll
+0x00007ff841d50000 - 0x00007ff841d5a000 	C:\Program Files\BellSoft\LibericaJDK-11\bin\jimage.dll
+0x00007ff83ffb0000 - 0x00007ff83ffbe000 	C:\Program Files\BellSoft\LibericaJDK-11\bin\instrument.dll
+0x00007ff831ee0000 - 0x00007ff831ef7000 	C:\Program Files\BellSoft\LibericaJDK-11\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\BellSoft\LibericaJDK-11\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Program Files\BellSoft\LibericaJDK-11\bin\server
+
+VM Arguments:
+jvm_args: -javaagent:D:\JetBrains\IntelliJ IDEA 2021.3.1\lib\idea_rt.jar=50402:D:\JetBrains\IntelliJ IDEA 2021.3.1\bin -Dfile.encoding=UTF-8 
+java_command: com.khaziev.rabbitmq.recipient.InfinityRecipientAPP
+java_class_path (initial): D:\OneDrive - DXC Production\Desktop\rabbitmq-all-demos\my_console_recipient\target\classes;C:\Users\ekhaziev\.m2\repository\org\slf4j\slf4j-simple\1.7.26\slf4j-simple-1.7.26.jar;C:\Users\ekhaziev\.m2\repository\org\slf4j\slf4j-api\1.7.26\slf4j-api-1.7.26.jar;C:\Users\ekhaziev\.m2\repository\com\rabbitmq\amqp-client\5.7.0\amqp-client-5.7.0.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 132120576                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2088763392                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5836300                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122910970                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122910970                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\BellSoft\LibericaJDK-11\
+PATH=C:\Program Files\BellSoft\LibericaJDK-11\bin\;C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\dotnet\;C:\Program Files\terraform;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\Amazon\AWSCLIV2\;C:\ProgramData\chocolatey\bin;C:\Program Files\Memurai\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\ekhaziev\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\ekhaziev\AppData\Local\Microsoft\WindowsApps;D:\JetBrains\IntelliJ IDEA 2021.3.1\bin;;C:\Users\ekhaziev\.dotnet\tools;C:\Users\ekhaziev\AppData\Local\Programs\Microsoft VS Code\bin;
+USERNAME=EKhaziev
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 12, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.1466)
+OS uptime: 12 days 8:04 hours
+Hyper-V role detected
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 12 microcode 0xde, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx, fma
+
+Memory: 4k page, system-wide physical 7965M (270M free)
+TotalPageFile size 21633M (AvailPageFile size 115M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 60M, peak: 186M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.12+7-LTS) for windows-amd64 JRE (11.0.12+7-LTS), built on Jul  9 2021 16:11:21 by "" with unknown MS VC++:1916
+
+END.
