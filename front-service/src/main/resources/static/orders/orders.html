@@ -1,0 +1,35 @@
+<div>
+    <p></p>
+    <h3>Мои заказы</h3>
+    <p></p>
+
+    <table class="table table-hover">
+        <tr>
+            <td>Заказ</td>
+            <td>Статус</td>
+            <td>Адрес доставки</td>
+            <td>Телефон</td>
+            <td>Стоимость</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tbody>
+        <tr ng-repeat="order in MyOrders">
+            <td>{{order.id}}</td>
+            <td>{{order.status}}</td>
+            <td>{{order.addressLine1}} {{order.addressLine2}} {{order.postalCode}} {{order.countryCode}} {{order.adminArea1}} {{order.adminArea2}}</td>
+            <td>{{order.phone}}</td>
+            <td>{{order.totalPrice}}</td>
+            <td>
+                <button class="btn btn-primary" ng-click="goToItem(order.id)">Список покупок</button>
+            </td>
+            <td>
+                <button class="btn btn-primary"   ng-click="goToPay(order.id)" ng-show="order.status == 'CREATED'">Оплатить</button>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!--addressLine1":"123 Townsend St","addressLine2":"Floor 6","postalCode":"San Francisco","countryCode":"CA","adminArea1":"94107","adminArea2"-->
