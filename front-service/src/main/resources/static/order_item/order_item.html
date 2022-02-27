@@ -1,0 +1,23 @@
+<div>
+    <p></p>
+    <h3>Заказ № {{order.id}}</h3>
+    <p></p>
+
+    <table class="table table-hover">
+        <tr>
+            <td>Наименование</td>
+            <td>Количество</td>
+            <td>Стоимость</td>
+            <td></td>
+        </tr>
+        <tbody>
+        <tr ng-repeat="item in order.items">
+            <td>{{item.productTitle}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.pricePerProduct + ' x ' + item.quantity + ' = ' + item.price}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!--addressLine1":"123 Townsend St","addressLine2":"Floor 6","postalCode":"San Francisco","countryCode":"CA","adminArea1":"94107","adminArea2"-->

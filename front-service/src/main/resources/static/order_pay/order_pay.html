@@ -1,0 +1,28 @@
+<div>
+    <p></p>
+    <h3>Ваш заказ</h3>
+    <table class="table table-hover">
+        <tr>
+            <td>Заказ</td>
+            <td>Адрес доставки</td>
+            <td>Телефон</td>
+            <td>Стоимость</td>
+        </tr>
+        <tr>
+            <td>{{order.id}}</td>
+            <td>{{order.addressLine1}} {{order.addressLine2}} {{order.postalCode}} {{order.countryCode}}
+                {{order.adminArea1}} {{order.adminArea2}}
+            </td>
+            <td>{{order.phone}}</td>
+            <td>{{order.totalPrice}}</td>
+        </tr>
+    </table>
+
+    <p></p>
+    <h3>Оплатить</h3>
+    <div id="paypal-buttons"></div>
+
+    <td>
+        <button class="btn btn-danger" ng-click="cancel()">Отмена</button>
+    </td>
+</div>
